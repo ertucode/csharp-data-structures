@@ -1,4 +1,4 @@
-namespace DataStructure;
+namespace DataStructures;
 
 public class DoublyNode<V>
 {

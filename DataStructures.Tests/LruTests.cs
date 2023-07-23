@@ -1,4 +1,4 @@
-namespace DataStructure.Tests;
+namespace DataStructures.Tests;
 
 public class LruTests
 {

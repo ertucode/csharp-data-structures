@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DataStructure\DataStructure.csproj" />
+        <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
     </ItemGroup>
 
 </Project>

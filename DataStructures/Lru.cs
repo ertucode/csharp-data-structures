@@ -1,6 +1,7 @@
-namespace DataStructure;
+namespace DataStructures;
 
-public class Lru<K, V> where K : notnull
+public class Lru<K, V>
+    where K : notnull
 {
     private int _length = 0;
     private DoublyNode<V>? head = null;
@@ -34,7 +35,8 @@ public class Lru<K, V> where K : notnull
     public V? Get(K key)
     {
         this._lookup.TryGetValue(key, out var node);
-        if (node == null) return default;
+        if (node == null)
+            return default;
 
         this.Detach(node);
         this.Prepend(node);
@@ -54,8 +56,10 @@ public class Lru<K, V> where K : notnull
             node.Next.Prev = node.Prev;
         }
 
-        if (head == node) head = head.Next;
-        if (tail == node) tail = tail.Prev;
+        if (head == node)
+            head = head.Next;
+        if (tail == node)
+            tail = tail.Prev;
 
         node.Next = null;
         node.Prev = null;
@@ -75,7 +79,8 @@ public class Lru<K, V> where K : notnull
 
     private void TrimCache()
     {
-        if (_length <= Capacity) return ;
+        if (_length <= Capacity)
+            return;
 
         var tail = this.tail!;
         this.tail = tail.Prev;

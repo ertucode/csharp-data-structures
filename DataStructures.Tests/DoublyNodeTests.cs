@@ -1,4 +1,4 @@
-namespace DataStructure.Tests;
+namespace DataStructures.Tests;
 
 public class DoubleNodeTests
 {
@@ -8,6 +8,6 @@ public class DoubleNodeTests
         var node = new DoublyNode<int>(2);
         var next = new DoublyNode<int>(4);
         node.Next = next;
-        Assert.Same(node.Next , next);
+        Assert.Same(node.Next, next);
     }
 }
