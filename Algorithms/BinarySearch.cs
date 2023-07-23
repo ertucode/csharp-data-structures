@@ -12,13 +12,14 @@ public static class BinarySearch
 
             if (curr.Equals(val))
                 return mi;
-
-            if (curr.CompareTo(val) <= 0)
+            else if (curr.CompareTo(val) <= 0)
             {
-                return SearchHelper(arr, val, mi + 1, hi);
+                lo = mi + 1;
             }
-
-            return SearchHelper(arr, val, lo, mi);
+            else
+            {
+                hi = mi;
+            }
         }
 
         return -1;
