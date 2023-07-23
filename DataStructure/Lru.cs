@@ -1,6 +1,6 @@
-namespace DataStructures;
+namespace DataStructure;
 
-class Lru<K, V> where K : notnull
+public class Lru<K, V> where K : notnull
 {
     private int _length = 0;
     private DoublyNode<V>? head = null;
