@@ -2,7 +2,7 @@ namespace DataStructures;
 
 public class Queue<T>
 {
-    private uint _length = 0;
+    public uint Length { private set; get; } = 0;
 
     private NNode<T>? _head;
     private NNode<T>? _tail;
@@ -10,24 +10,15 @@ public class Queue<T>
     public void Enqueue(T item)
     {
         var toBeInserted = new NNode<T>(item);
-        _length++;
+        Length++;
 
-        if (_head == null)
+        if (_tail == null)
         {
             _tail = _head = toBeInserted;
             return;
         }
-        if (_head == _tail)
-        {
-            var prevHead = _head;
-            _head = toBeInserted;
-            _tail = prevHead;
-            _head.Next = _tail;
-            return;
-        }
-
-        toBeInserted.Next = _head;
-        _head = toBeInserted;
+        _tail.Next = toBeInserted;
+        _tail = toBeInserted;
     }
 
     public T? Dequeue()
@@ -37,7 +28,7 @@ public class Queue<T>
 
         if (_head.Next == null)
         {
-            _length = 0;
+            Length = 0;
             var temp = _head;
             _head = _tail = null;
             return temp.Value;
@@ -45,7 +36,7 @@ public class Queue<T>
 
         var val = _head.Value;
         _head = _head.Next;
-        _length--;
+        Length--;
 
         return val;
     }
