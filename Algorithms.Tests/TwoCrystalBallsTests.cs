@@ -1,4 +1,4 @@
-namespace DataStructures.Tests;
+namespace Algorithms.Tests;
 
 public class TwoCrystalBallsTests
 {
